@@ -1,4 +1,7 @@
 # Try to keep these in sync with the requirements.txt of locum.
 Django==1.8.3
+Pillow==3.0.0
 djangorestframework==3.2.4
 psycopg2==2.6.1
+redis==2.10.5
+sorl-thumbnail==12.3

@@ -35,7 +35,9 @@ COVERCACHE_APPS = (
     'covercache',
 )
 
-THIRD_PARTY_APPS = ()
+THIRD_PARTY_APPS = (
+    'sorl.thumbnail',
+)
 
 INSTALLED_APPS = DJANGO_APPS + COVERCACHE_APPS + THIRD_PARTY_APPS
 
