@@ -64,8 +64,6 @@ MIDDLEWARE_CLASSES = (
 
 # SECURITY WARNING: don't run with debug = True in production!
 DEBUG = True
-TEMPLATE_DEBUG = DEBUG
-
 
 
 
@@ -195,3 +193,7 @@ ROOT_URLCONF = 'covercache.urls'
 # ------------------------------------------------------------------------------
 # -----------------> third-party and covercache configurations <----------------
 # ------------------------------------------------------------------------------
+
+# Default size is the image size that will be returned if no other size
+# is specified. It is a (width, height) tuple.
+THUMBNAIL_DEFAULT_SIZE = (100, 100)
