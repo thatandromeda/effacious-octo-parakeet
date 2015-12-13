@@ -1,3 +1,6 @@
+cache/
+*.jpg
+
 # Created by https://www.gitignore.io/api/osx,django,sublimetext,vim,python
 
 ### OSX ###
