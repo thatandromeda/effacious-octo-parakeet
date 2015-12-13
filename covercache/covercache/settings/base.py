@@ -195,5 +195,11 @@ ROOT_URLCONF = 'covercache.urls'
 # ------------------------------------------------------------------------------
 
 # Default size is the image size that will be returned if no other size
-# is specified. It is a (width, height) tuple.
-THUMBNAIL_DEFAULT_SIZE = (100, 100)
+# is specified. It is a string of {width}x{height}.
+THUMBNAIL_DEFAULT_SIZE = '100x100'
+
+COVERCACHE_AUTH = {
+    'SYNDETICS': {
+        'CLIENT_CODE': os.environ.get('COVERCACHE_SYNDETICS_CLIENT_CODE', None)
+    }
+}

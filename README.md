@@ -12,3 +12,10 @@ To set this up on your localhost...
   * Pillow has some [additional sometimes-optional dependencies](https://pillow.readthedocs.org/en/3.0.x/installation.html). We need `libjpeg` and `zlib`. They are probably available via your favorite package manager (they are definitely available with brew and apt-get).
 * `python covercache/manage.py migrate` (you only need to do this the first time you set it up, or after the database schema has changed)
 * `python covercache/manage.py runserver` Yay, now you have a Django app at 127.0.0.1:8000.
+
+## Configuring providers
+
+covercache can get images from the following providers, which must be configured with the following options:
+
+### Syndetics
+* Set the environment variable `COVERCACHE_SYNDETICS_CLIENT_CODE` (This is the code that goes after `&client=` when you fetch images from Syndetics.)

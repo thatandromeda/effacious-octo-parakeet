@@ -45,7 +45,7 @@ LOGGING = {
     },
     'loggers': {
         'django.request': {
-            'level': 'ERROR',
+            'level': 'INFO',
             'propagate': True,
         },
         '': {

@@ -21,7 +21,7 @@ from .views import ImageGetView
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^(?P<isbn>[\d-]+)/$',
+    url(r'^(?P<isbn>[\d\-\s]+)/$',
         ImageGetView.as_view(),
         name='image_get_view'),
 ]

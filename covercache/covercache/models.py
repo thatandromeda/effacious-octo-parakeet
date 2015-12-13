@@ -1,10 +1,9 @@
-import re
-
+from django.core.exceptions import ValidationError
 from django.db import models
 
 from sorl.thumbnail import ImageField
 
-from .helpers import isbn_normalize, ISBN_VALIDATOR
+from .helpers import isbn_normalize, is_isbn_valid
 
 class IsbnObject(models.Model):
     """
@@ -18,10 +17,12 @@ class IsbnObject(models.Model):
     functions interacting with IsbnObjects are responsible for normalizing
     ISBNs before checking for them.
     """
-    isbn = models.IntegerField()
+    isbn = models.CharField(max_length=13)
     image = ImageField()
 
     def save(self, *args, **kwargs):
-        assert re.match(ISBN_VALIDATOR, self.isbn)
         self.isbn = isbn_normalize(self.isbn)
-        super(IsbnObject, self).save(*args, **kwargs)
+        if is_isbn_valid(self.isbn):
+            super(IsbnObject, self).save(*args, **kwargs)
+        else:
+            raise ValidationError
